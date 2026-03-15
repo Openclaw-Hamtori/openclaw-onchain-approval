@@ -1,0 +1,14 @@
+{
+  "requestId": "oc-demo-approval-001",
+  "type": "erc20_approve",
+  "chainId": 1,
+  "from": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "spender": "0x3333333333333333333333333333333333333333",
+  "allowance": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+  "memo": "Approve new router before settlement",
+  "metadata": {
+    "tokenSymbol": "USDC",
+    "intent": "pre-trade approval"
+  }
+}

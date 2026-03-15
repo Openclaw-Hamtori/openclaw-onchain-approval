@@ -1,0 +1,29 @@
+{
+  "name": "@openclaw/onchain-approval",
+  "version": "0.1.0",
+  "description": "Local-first approval gate for OpenClaw onchain actions",
+  "type": "module",
+  "bin": {
+    "openclaw-approval": "./bin/openclaw-approval.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "examples",
+    "src"
+  ],
+  "scripts": {
+    "check": "npm test",
+    "example": "node ./examples/openclaw-flow.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "openclaw",
+    "blockchain",
+    "approval",
+    "policy",
+    "receipt"
+  ]
+}
