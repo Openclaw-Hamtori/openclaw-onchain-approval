@@ -46,7 +46,7 @@ const receipt = createApprovalReceipt({
   context: {
     agent: "OpenClaw",
     executionMode: "dry-run",
-    flow: "local-mvp",
+    flow: "local-approval-kit",
   },
 });
 
@@ -78,6 +78,7 @@ console.log(
       allowed: gateResult.allowed,
       reason: gateResult.reason,
       verification: gateResult.verification,
+      decisionBinding: gateResult.decisionBinding,
     },
     null,
     2,

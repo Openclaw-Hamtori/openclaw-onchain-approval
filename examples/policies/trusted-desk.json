@@ -1,0 +1,11 @@
+{
+  "chainId": 1,
+  "requireApprovalForUnknownAddress": true,
+  "nativeTransferThresholdWei": "100000000000000000",
+  "defaultErc20TransferThreshold": "5000000",
+  "defaultAllowanceThreshold": "1000000",
+  "alwaysRequireApprovalFor": [
+    "contract_call"
+  ],
+  "knownAddresses": []
+}

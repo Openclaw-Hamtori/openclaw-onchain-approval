@@ -1,0 +1,6 @@
+{
+  "agent": "OpenClaw",
+  "workflow": "local-hook-demo",
+  "operator": "finance-reviewer",
+  "ticket": "oc-demo-approval-001"
+}

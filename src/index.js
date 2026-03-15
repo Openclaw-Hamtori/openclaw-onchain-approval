@@ -7,10 +7,11 @@ export {
   createPolicy,
   evaluateApprovalRequirement,
 } from "./policy.js";
+export { createPolicyFromPreset, getPolicyPreset, listPolicyPresets } from "./presets.js";
 export {
   RECEIPT_VERSION,
   createApprovalReceipt,
   generateApprovalKeyPair,
   verifyApprovalReceipt,
 } from "./receipt.js";
-export { authorizeActionExecution } from "./gate.js";
+export { authorizeActionExecution, verifyReceiptDecisionBinding } from "./gate.js";

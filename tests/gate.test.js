@@ -55,4 +55,35 @@ test("execution passes once a valid receipt is attached", () => {
   assert.equal(result.allowed, true);
   assert.equal(result.reason, "receipt_verified");
   assert.equal(result.verification?.ok, true);
+  assert.equal(result.decisionBinding?.ok, true);
+});
+
+test("execution stays blocked when the receipt decision no longer matches the enforced policy", () => {
+  const action = JSON.parse(readExample("demo-action.json"));
+  const policy = JSON.parse(readExample("demo-policy.json"));
+  const privateKeyPem = readExample("demo-approver-private.pem");
+  const decision = evaluateApprovalRequirement(action, policy);
+  const receipt = createApprovalReceipt({
+    action,
+    decision: {
+      ...decision,
+      matchedRules: ["unknown_counterparty"],
+    },
+    privateKeyPem,
+    issuedAt: "2026-03-15T09:00:00.000Z",
+    expiresAt: "2026-03-15T09:15:00.000Z",
+  });
+
+  const result = authorizeActionExecution({
+    action,
+    policy,
+    receipt,
+    now: "2026-03-15T09:05:00.000Z",
+  });
+
+  assert.equal(result.allowed, false);
+  assert.equal(result.reason, "receipt_decision_mismatch");
+  assert.equal(result.verification?.ok, true);
+  assert.equal(result.decisionBinding?.ok, false);
+  assert.match(result.decisionBinding?.errors.join(" "), /matchedRules/);
 });

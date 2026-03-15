@@ -1,6 +1,6 @@
 {
   "name": "@openclaw/onchain-approval",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local-first approval gate for OpenClaw onchain actions",
   "type": "module",
   "bin": {
@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "check": "npm test",
+    "demo": "node ./examples/openclaw-hooks/run-demo.js",
     "example": "node ./examples/openclaw-flow.js",
+    "example:hooks": "node ./examples/openclaw-hooks/run-demo.js",
     "test": "node --test"
   },
   "keywords": [
